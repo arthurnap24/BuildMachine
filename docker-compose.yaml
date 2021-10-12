@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  # Used cpp-build-machine for interactive running of commands
+  cpp-dev-machine:
+    image: cpp-build-machine:latest
+    volumes:
+      - ./projects:/usr/src/myapp
+  cpp-dev-machine-test:
+    image: cpp-build-machine:latest
+    volumes:
+      - ./tests:/usr/src/myapp
