@@ -1,6 +1,5 @@
 version: "3.9"
 services:
-  # Used cpp-build-machine for interactive running of commands
   cpp-dev-machine:
     image: cpp-build-machine:latest
     volumes:
