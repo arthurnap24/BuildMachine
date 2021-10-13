@@ -2,7 +2,16 @@
 
 My personal development container that I can use for C++ developments on Ubuntu Linux.
 
-### How to Use
+### How To Run Container
+Execute:
+`./run.sh`
 
-To open up an interactive shell run:
-`./run.sh <cpp-dev-machine|cpp-dev-machine-test>`
+
+### How To Build Image
+Execute:
+`cd ci && ./build_image.sh`
+
+### Packages downloaded in Image
+These packages are downloaded via APT:
+- CMake
+- GTest
