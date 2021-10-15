@@ -1,10 +1,11 @@
 FROM gcc:latest
 WORKDIR /usr/src/myapp
 
-RUN apt-get update \
-    && apt-get -y upgrade \
-    && apt-get -y install cmake \
-    && apt-get -y install libgtest-dev \
+RUN apt update \
+    && apt upgrade \
+    && apt -y install cmake \
+    && apt -y install libasio-dev \
+    && apt -y install libgtest-dev \
     && cd /usr/src/googletest/googletest \
     && mkdir build \
     && cd build \
