@@ -6,6 +6,10 @@ My personal development container that I can use for C++ developments on Ubuntu 
 Execute:
 `./run.sh`
 
+### How To Build Example Projects
+Run the container - When you get to the container's shell, execute the command below.
+Execute:
+`./build.sh`
 
 ### How To Build Image
 Execute:
