@@ -1,6 +1,6 @@
 version: "3.9"
 services:
   cpp-dev-machine:
-    image: cpp-build-machine:latest
+    image: arthurnap24/cpp-build-machine:latest
     volumes:
-      - ./projects:/usr/src/myapp
+      - ${APP_FOLDER:?Set a valid directory}:/usr/src/myapp
