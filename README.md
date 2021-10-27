@@ -16,8 +16,12 @@ then execute:
 
 ### How To Build Example Projects
 Run the container - When you get to the container's shell, execute the command below.
-Execute:
+
+To build all sample projects:
 `./build.sh`
+
+To build specific sample projects (which has the same name as the subdirectory in the projects/ folder):
+`./build.sh <sample-project-name>`
 
 ### How To Build Image
 Execute:
