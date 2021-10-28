@@ -1,5 +1,6 @@
 #include <iostream>
 #include <boost/asio.hpp>
+#include <boost/bind/bind.hpp>
 
 void blocking_wait()
 {
@@ -53,13 +54,58 @@ void timer_async_wait_run_first()
   t.async_wait(&print);
 }
 
+void wait(boost::asio::steady_timer* t);
+
+class Printer {
+public:
+  Printer(int wait_for_secs) :
+    t_(io_, boost::asio::chrono::seconds(wait_for_secs))
+  {}
+
+  void start() {
+    wait();
+    io_.run();
+    print_count();
+  }
+
+private:
+  void wait() {
+    t_.async_wait(boost::bind(&Printer::print, this,
+      boost::asio::placeholders::error));
+  }
+
+  void print(const boost::system::error_code& /*e*/) {
+    if (count_ < 5) {
+      std::cout << "Hello, count = " << count_++ << std::endl;
+      t_.expires_at(t_.expiry() + boost::asio::chrono::seconds(1));
+      wait();
+    }
+  }
+
+  void print_count()
+  {
+    std::cout << "Final count is: " << count_ << std::endl;
+  }
+
+  int count_ = 0;
+  boost::asio::io_context io_;
+  boost::asio::steady_timer t_;
+};
+
+void timer_async_wait_bind()
+{
+  Printer printer(2); // RAII
+  printer.start();
+}
+
 int main()
 {
-  //blocking_wait();
-  //timer_no_wait();
-  //timer_async_wait();
-  //timer_async_wait_no_work();
-  timer_async_wait_run_first();
+  // blocking_wait();
+  // timer_no_wait();
+  // timer_async_wait();
+  // timer_async_wait_no_work();
+  // timer_async_wait_run_first();
+  timer_async_wait_bind();
 
   return 0;
 }
