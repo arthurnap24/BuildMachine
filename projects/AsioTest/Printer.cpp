@@ -18,18 +18,11 @@ void TimerExamples::Printer::start()
 void TimerExamples::Printer::wait()
 {
     timer_.expires_after(std::chrono::seconds(wait_time_secs_));
-    timer_.async_wait(boost::bind(&Printer::print, this,
-        boost::asio::placeholders::error));
+    timer_.async_wait(boost::bind(&Printer::print, this));
 }
 
-void TimerExamples::Printer::print(
-    const boost::system::error_code& error)
+void TimerExamples::Printer::print()
 {
-    if (error) {
-        std::cout << "An error occured\n";
-        timer_.cancel();
-        return;
-    }
     if (count_ < 5) {
         std::cout << "count = " << count_++ << '\n';
         wait();

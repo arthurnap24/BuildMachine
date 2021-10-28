@@ -19,7 +19,7 @@ public:
 
 private:
     void wait();
-    void print(const boost::system::error_code& error);
+    void print();
     void print_count();
 
     int wait_time_secs_ = 0;
