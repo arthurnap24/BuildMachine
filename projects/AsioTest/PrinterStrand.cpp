@@ -57,19 +57,3 @@ void TimerExamples::PrinterStrand::print2()
         wait_timer2();
     }
 }
-
-void TimerExamples::printer_example_strand()
-{
-    PrinterStrand p(1);
-    p.start();
-}
-
-void TimerExamples::printer_example_strand_multithread()
-{
-    PrinterStrand p1(1);
-    std::thread t([&p1]() {
-        p1.get_io_context().run();
-    });
-    p1.start();
-    t.join();
-}

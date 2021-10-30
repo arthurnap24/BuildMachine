@@ -33,8 +33,4 @@ private:
     boost::asio::steady_timer timer2_; 
 };
 
-void printer_example_strand();
-
-void printer_example_strand_multithread();
-
 }

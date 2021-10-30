@@ -28,10 +28,4 @@ private:
     boost::asio::steady_timer timer_;
 };
 
-void printer_example();
-
-void printer_example_two_printers();
-
-void printer_example_two_threads();
-
 }

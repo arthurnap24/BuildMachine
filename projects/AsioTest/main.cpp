@@ -1,5 +1,3 @@
-#include "Printer.h"
-#include "PrinterStrand.h"
 #include "TimerExamples.h"
 
 int main()

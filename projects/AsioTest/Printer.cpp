@@ -34,33 +34,3 @@ void TimerExamples::Printer::print_count()
 {
     std::cout << "Final count is: " << count_ << '\n';
 }
-
-void TimerExamples::printer_example()
-{
-    Printer printer(1);
-    printer.start();
-}
-
-void TimerExamples::printer_example_two_printers()
-{
-  Printer printer1(1);
-  Printer printer2(1);
-  printer1.start();
-  printer2.start();
-}
-
-void TimerExamples::printer_example_two_threads()
-{
-  std::thread thread1([]() {
-    Printer printer(1);
-    printer.start();
-  });
-
-  std::thread thread2([]() {
-    Printer printer(1);
-    printer.start();
-  });
-
-  thread1.join();
-  thread2.join();
-}
