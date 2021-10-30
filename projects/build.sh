@@ -2,10 +2,11 @@
 set -e
 
 PROJECTS_TO_BUILD=$@
-if [ -d ./build ]; then
-    echo "Directory build/ exists, will remove."
-    rm -rf ./build
-fi
+#TODO: Need a rebuild option
+#if [ -d ./build ]; then
+#    echo "Directory build/ exists, will remove."
+#    rm -rf ./build
+#fi
 
 CMAKE_OPTIONS=""
 for PROJECT in $PROJECTS_TO_BUILD
