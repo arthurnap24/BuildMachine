@@ -6,6 +6,8 @@
 #include "Printer.h"
 #include "PrinterStrand.h"
 
+using namespace Printers;
+
 void TimerExamples::blocking_wait()
 {
     boost::asio::io_context io;
@@ -87,6 +89,7 @@ void TimerExamples::printer_example_strand()
     p.start();
 }
 
+// TODO: Sometimes, this example just does not start at all?
 void TimerExamples::printer_example_strand_multithread()
 {
     PrinterStrand p1(1);

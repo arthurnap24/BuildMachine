@@ -1,7 +1,7 @@
 #pragma once
 #include "AsioIncludes.h"
 
-namespace TimerExamples {
+namespace Printers {
 
 class PrinterStrand {
 public:
@@ -33,4 +33,4 @@ private:
     boost::asio::steady_timer timer2_; 
 };
 
-}
+} // namespace Printers
