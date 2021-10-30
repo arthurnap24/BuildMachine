@@ -30,4 +30,8 @@ private:
 
 void printer_example();
 
+void printer_example_two_printers();
+
+void printer_example_two_threads();
+
 }
