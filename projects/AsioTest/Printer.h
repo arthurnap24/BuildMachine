@@ -13,14 +13,13 @@ public:
     Printer(Printer&& /*other*/) = delete;
     Printer& operator=(Printer&& /*other*/) = delete;
     
-    ~Printer() = default;
+    ~Printer();
 
     void start();
 
 private:
     void wait();
     void print();
-    void print_count();
 
     int wait_time_secs_ = 0;
     int count_ = 0;

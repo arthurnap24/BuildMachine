@@ -11,11 +11,15 @@ Printer::Printer(int wait_time_secs)
     , timer_(io_)
 {}
 
+Printer::~Printer()
+{
+    std::cout << "Final count is: " << count_ << '\n';
+}
+
 void Printer::start()
 {
     wait();
     io_.run();
-    print_count();
 }
 
 void Printer::wait()
@@ -30,11 +34,6 @@ void Printer::print()
         std::cout << "count = " << count_++ << '\n';
         wait();
     }
-}
-
-void Printer::print_count()
-{
-    std::cout << "Final count is: " << count_ << '\n';
 }
 
 } // namespace Printers
