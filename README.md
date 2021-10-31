@@ -20,8 +20,11 @@ Run the container - When you get to the container's shell, execute the command b
 To build all sample projects:
 `./build.sh`
 
-To build specific sample projects (which has the same name as the subdirectory in the projects/ folder):
-`./build.sh <sample-project-name>`
+This script invokes the `cmake --build` command after generating the build files. To provide options to `cmake --build`, just pass them to this script as you would to `cmake --build`.
+
+Example:
+- Clean first: `./build.sh --clean-first`
+- Clean first and build two sample projects: `./build.sh --clean-first -t <project1> -t <project2>`
 
 ### How To Build Image
 Execute:
