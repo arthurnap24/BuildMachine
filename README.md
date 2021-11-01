@@ -15,7 +15,10 @@ then execute:
 `./run.sh`
 
 ### How To Build Example Projects
-Run the container - When you get to the container's shell, execute the command below.
+The `Examples/` directory is a Git Subtree. It's repo can be found here:
+[Examples](https://github.com/arthurnap24/Examples.git)
+
+Set the `APP_FOLDER` variable in your .env file to `./Examples`. Then run the container. When you get to the container's shell, execute the command below.
 
 To build all sample projects:
 `./build.sh`
