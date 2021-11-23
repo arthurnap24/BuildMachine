@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+WORKDIR /usr/src/myapp
+
+RUN apk update \
+    && apk upgrade \
+    && apk add build-base \ 
+    && apk add gtest-dev \
+    && apk add asio-dev

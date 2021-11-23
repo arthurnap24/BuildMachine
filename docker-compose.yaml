@@ -1,6 +1,6 @@
 version: "3.9"
 services:
   cpp-dev-machine:
-    image: arthurnap24/cpp-build-machine:latest
+    image: arthurnap24/${OS:?Set OS as alpine or ubuntu}-build-machine:latest
     volumes:
       - ${APP_FOLDER:?Set a valid directory}:/usr/src/myapp
