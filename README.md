@@ -1,4 +1,4 @@
-## CppUbuntu
+## BuildMachine
 
 My personal development container that I can use for C++ developments on Ubuntu Linux.
 
