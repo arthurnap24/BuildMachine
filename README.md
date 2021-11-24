@@ -35,6 +35,7 @@ Execute:
 `cd ci && ./build_image.sh`
 
 ### Packages downloaded in Image
-These packages are downloaded via APT:
+These packages are downloaded via APK (alpine-build-image) or APT (ubuntu-build-image):
 - CMake
 - GTest
+- Asio
