@@ -16,15 +16,22 @@ then execute:
 `./run.sh <alpine|ubuntu>`
 
 ### How To Build Example Projects
-The `Examples/` directory is a Git Subtree. It's repo can be found here:
-[Examples](https://github.com/arthurnap24/Examples.git)
+In the host machine, open a terminal and run these commands (check the [Examples](https://github.com/arthurnap24/Examples.git) for more details):
+```
+cd ~
+git clone https://github.com/arthurnap24/Examples.git
+# Or directory where you have this repo
+cd ./BuildMachine
+echo "APP_FOLDER=~/Examples" > .env
 
-Set the `APP_FOLDER` variable in your .env file to `./Examples`. Then run the container. When you get to the container's shell, execute the command below.
+# Run the container
+./run.sh ubuntu
 
-To build all sample projects:
-`./build.sh`
+# Inside the container -- builds all sample projects
+./build.sh
+```
 
-This script invokes the `cmake --build` command after generating the build files. To provide options to `cmake --build`, just pass them to this script as you would to `cmake --build`.
+The `build.sh` script invokes the `cmake --build` command after generating the build files. To provide options to `cmake --build`, just pass them to this script as you would to `cmake --build`.
 
 Example:
 - Clean first: `./build.sh --clean-first`
@@ -32,7 +39,9 @@ Example:
 
 ### How To Build Image
 Execute:
-`cd ci && ./build_image.sh`
+```
+cd ci && ./build_image.sh
+```
 
 ### Packages downloaded in Image
 These packages are downloaded via APK (alpine-build-image) or APT (ubuntu-build-image):
