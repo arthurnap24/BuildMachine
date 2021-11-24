@@ -1,3 +1,0 @@
-## Examples
-
-My example projects
