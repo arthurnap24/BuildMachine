@@ -43,6 +43,17 @@ Execute:
 cd ci && ./build_image.sh
 ```
 
+### How To Push Image to your own repo
+
+Run:
+```
+export DOCKER_USER=<your Docker account's username>
+export DOCKER_PASSWORD=<your Docker account's password>
+./push_image.sh all
+```
+
+See script's help string.
+
 ### Packages downloaded in Image
 These packages are downloaded via APK (alpine-build-image) or APT (ubuntu-build-image):
 - CMake
