@@ -6,6 +6,7 @@ RUN apt update \
     && apt -y install cmake \
     && apt -y install libasio-dev \
     && apt -y install libgtest-dev \
+    && apt -y install libgmock-dev \
     && cd /usr/src/googletest/googletest \
     && mkdir build \
     && cd build \
