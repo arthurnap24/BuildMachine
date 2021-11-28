@@ -14,7 +14,7 @@ all - tags both alpine and ubuntu images with \$DOCKER_USER environment variable
 """
 }
 
-if [[ -z $DOCKER_USER ]] || [[ -z $DOCKER_PASSWORD ]]; then
+if [ -z $DOCKER_USER ] || [ -z $DOCKER_PASSWORD ]; then
     print_usage
     exit 0;
 fi
