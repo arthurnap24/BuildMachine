@@ -1,6 +1,10 @@
 #!/bin/bash
 
 main() {
+    if [[ $1 == "-h" ]]; then
+        print_usage
+        exit 0
+    fi
     OS=$1
     docker_authenticate
     docker_push $OS
@@ -31,7 +35,7 @@ docker_push() {
     elif [[ $OS == "all" ]]; then
         push_all_supported_images
     else
-        not_supported_error
+        os_not_supported_error
     fi    
 }
 
@@ -56,14 +60,14 @@ push_image() {
     docker push $IMAGE_TAG
 }
 
-not_supported_error() {
+os_not_supported_error() {
     print_not_supported
     exit 1;
 }
 
 print_not_supported() {
     echo """
-The operating system $1 is not supported, please run with -h flag to view all supported OS.
+The operating system is not supported, please run with -h flag to view all supported OS.
 """
 }
 
